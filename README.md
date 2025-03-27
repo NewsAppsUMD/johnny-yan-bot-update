@@ -1,1 +1,2 @@
 # johnny-yan-bot-update
+I added three folders, fetch_articles.py, save_to_csv.py and generate_summary.py. fetch_articles.py retrieves a list of articles from PubMed about Alzheimer's Disease with the title and link to each article. It also gives an abstract from eachj article. save_to_csv.py takes the list of articles and saves them into a CSV file. generate_summary gives the abstract summary of each article with their links. The block that i encountered is that when I input each of these commands, they all print out the same output which is odd.
