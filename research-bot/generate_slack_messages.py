@@ -1,9 +1,13 @@
+import os
 from slack_sdk import WebClient
 from slack_sdk.errors import SlackApiError
 from fetch_articles import fetch_articles
 
+# Get the Slack token from environment variables
+slack_token = os.environ.get("SLACK_BOT_TOKEN")  # Correct usage
+
 # Initialize the Slack client with your Bot Token
-client = WebClient(token="xoxb-3300787831347-8573909520054-Goc5dFv7Mjoq3HxCBMheGScV")  # Replace with your actual bot token
+client = WebClient(token=slack_token)
 
 def generate_slack_messages():
     articles = fetch_articles()
@@ -14,12 +18,12 @@ def generate_slack_messages():
         authors = article["authors"]
         pub_date = article["publication_date"]
 
-        # Format the message to include the title, link, authors, and publication date
+        # Format the message using Markdown
         slack_message = (
-            f"*<{link}|{title}>*\n"  # Title as a clickable link
+            f"*<{link}|{title}>*\n"
             f":memo: *Authors:* {authors}\n"
             f":calendar: *Publication Date:* {pub_date}\n"
-            f":link: *Read More:* <{link}>\n"  # Link to the article
+            f":link: *Read More:* <{link}>\n"
         )
 
         try:
@@ -34,3 +38,4 @@ def generate_slack_messages():
 
 if __name__ == "__main__":
     generate_slack_messages()
+
