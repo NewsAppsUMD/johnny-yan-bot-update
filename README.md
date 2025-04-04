@@ -4,3 +4,5 @@ I added three folders, fetch_articles.py, save_to_csv.py and generate_summary.py
 
 ### March 28 Update
 I was able the publication dates for the articles along with the publication authors for each article. I feel like there's more I could do with this but at the moment I'm not sure. One blocker I have is for the generate summary section, I would like it to extract and generate in the output the key points in bullet point format; not quit sure how to do that yet; also the format for the authors in the output seems a bit messy; trying to figure out how to get them organized line by line. 
+
+
